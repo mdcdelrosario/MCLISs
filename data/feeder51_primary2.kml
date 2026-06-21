@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document id="root_doc">
+    <Schema id="feeder51_primary2.schema">
+      <SimpleField name="JAEDType" type="string"/>
+      <SimpleField name="SectionID" type="string"/>
+      <SimpleField name="FromBus" type="string"/>
+      <SimpleField name="ToBus" type="string"/>
+      <SimpleField name="Phase" type="string"/>
+      <SimpleField name="PhaseCondUnit" type="string"/>
+      <SimpleField name="PhaseCondStrands" type="string"/>
+      <SimpleField name="PhaseCondType" type="string"/>
+      <SimpleField name="PhaseCondSize" type="string"/>
+      <SimpleField name="NeutralCondUnit" type="string"/>
+      <SimpleField name="NeutralCondStrands" type="string"/>
+      <SimpleField name="NeutralCondType" type="string"/>
+      <SimpleField name="NeutralCondSize" type="string"/>
+      <SimpleField name="length" type="string"/>
+      <SimpleField name="D12" type="string"/>
+      <SimpleField name="D23" type="string"/>
+      <SimpleField name="D13" type="string"/>
+      <SimpleField name="D1n" type="string"/>
+      <SimpleField name="D2n" type="string"/>
+      <SimpleField name="D3n" type="string"/>
+    </Schema>
+    <Document id="feeder51_primary2">
+      <name>feeder51_primary2</name>
+      <Placemark id="feeder51_primary2.1">
+        <ExtendedData>
+          <SchemaData schemaUrl="#feeder51_primary2.schema">
+            <SimpleData name="JAEDType">MVLine</SimpleData>
+            <SimpleData name="SectionID">DX120568710921586970250</SimpleData>
+            <SimpleData name="FromBus">PP120568920841587020264</SimpleData>
+            <SimpleData name="ToBus">PP120568710921586970250</SimpleData>
+            <SimpleData name="Phase">CAN</SimpleData>
+            <SimpleData name="PhaseCondUnit">AWG</SimpleData>
+            <SimpleData name="PhaseCondStrands">6/1</SimpleData>
+            <SimpleData name="PhaseCondType">ACSR</SimpleData>
+            <SimpleData name="PhaseCondSize">4/0</SimpleData>
+            <SimpleData name="NeutralCondUnit">AWG</SimpleData>
+            <SimpleData name="NeutralCondStrands">6/1</SimpleData>
+            <SimpleData name="NeutralCondType">ACSR</SimpleData>
+            <SimpleData name="NeutralCondSize">1/0</SimpleData>
+            <SimpleData name="length">59.9435448815223</SimpleData>
+            <SimpleData name="D12">1.2</SimpleData>
+            <SimpleData name="D23">1.2</SimpleData>
+            <SimpleData name="D13">2.25</SimpleData>
+            <SimpleData name="D1n">1.3</SimpleData>
+            <SimpleData name="D2n">1</SimpleData>
+            <SimpleData name="D3n">1.3</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>
+              120.567834024335,15.8664324423878,0
+              120.567530880247,15.8658813101336,0
+              120.56726047929,15.8653692755112,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.567834024335,15.8664324423878,0
+              120.567681798977,15.8664843113051,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.568920841931,15.8702026374744,0
+              120.568710915624,15.8697024976552,0
+              120.568669478428,15.8692844992154,0
+              120.568749305187,15.8688242577903,0
+              120.568729215573,15.8684567320255,0
+              120.568669439804,15.8680973864838,0
+              120.568486507325,15.8676362906906,0
+              120.568302704564,15.8673013942779,0
+              120.567984521742,15.8666900681088,0
+              120.567834024335,15.8664324423878,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.607632624608,15.8886054472053,0
+              120.607651745088,15.8885761437359,0
+            </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Document>
+  </Document>
+</kml>

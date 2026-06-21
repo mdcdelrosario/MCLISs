@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="F12" id="F12">
+	<SimpleField name="JAEDType" type="string"></SimpleField>
+	<SimpleField name="SectionID" type="string"></SimpleField>
+	<SimpleField name="FromBus" type="string"></SimpleField>
+	<SimpleField name="ToBus" type="string"></SimpleField>
+	<SimpleField name="Phase" type="string"></SimpleField>
+	<SimpleField name="PhaseCondUnit" type="string"></SimpleField>
+	<SimpleField name="PhaseCondStrands" type="string"></SimpleField>
+	<SimpleField name="PhaseCondType" type="string"></SimpleField>
+	<SimpleField name="PhaseCondSize" type="string"></SimpleField>
+	<SimpleField name="NeutralCondUnit" type="string"></SimpleField>
+	<SimpleField name="NeutralCondStrands" type="string"></SimpleField>
+	<SimpleField name="NeutralCondType" type="string"></SimpleField>
+	<SimpleField name="NeutralCondSize" type="string"></SimpleField>
+	<SimpleField name="length" type="string"></SimpleField>
+	<SimpleField name="D12" type="string"></SimpleField>
+	<SimpleField name="D23" type="string"></SimpleField>
+	<SimpleField name="D13" type="string"></SimpleField>
+	<SimpleField name="D1n" type="string"></SimpleField>
+	<SimpleField name="D2n" type="string"></SimpleField>
+	<SimpleField name="D3n" type="string"></SimpleField>
+</Schema>
+<Folder><name>F12</name>
+  <Placemark id="F12.1">
+	<Style><LineStyle><color>FF393cc4</color><width>0.737006</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#F12">
+		<SimpleData name="JAEDType">MVLine</SimpleData>
+		<SimpleData name="SectionID">DX120425575081602564491P</SimpleData>
+		<SimpleData name="FromBus">PP120425617871602574283</SimpleData>
+		<SimpleData name="ToBus">DT120425575081602564491P</SimpleData>
+		<SimpleData name="Phase">CAN</SimpleData>
+		<SimpleData name="PhaseCondUnit">AWG</SimpleData>
+		<SimpleData name="PhaseCondStrands">6/1</SimpleData>
+		<SimpleData name="PhaseCondType">ACSR</SimpleData>
+		<SimpleData name="PhaseCondSize">2/0</SimpleData>
+		<SimpleData name="NeutralCondUnit">AWG</SimpleData>
+		<SimpleData name="NeutralCondStrands">6/1</SimpleData>
+		<SimpleData name="NeutralCondType">ACSR</SimpleData>
+		<SimpleData name="NeutralCondSize">1/0</SimpleData>
+		<SimpleData name="length">11.4285706614806</SimpleData>
+		<SimpleData name="D12">1.2</SimpleData>
+		<SimpleData name="D23">1.2</SimpleData>
+		<SimpleData name="D13">2.25</SimpleData>
+		<SimpleData name="D1n">1.3</SimpleData>
+		<SimpleData name="D2n">1</SimpleData>
+		<SimpleData name="D3n">1.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><LineString><coordinates>120.425617870195,16.0257428292794 120.425562255216,16.025654976413</coordinates></LineString><LineString><coordinates>120.449661962884,16.0248265717994 120.449631728846,16.0248365243911</coordinates></LineString><LineString><coordinates>120.459356144172,16.0213521774605 120.459783730136,16.021502484196 120.460373592101,16.0218467356294 120.460742008435,16.0221517401059 120.461156268958,16.0224017716224 120.461539640491,16.0226201505817 120.46188465334,16.0228066739121 120.462327597047,16.0230585046269</coordinates></LineString><LineString><coordinates>120.462264493788,16.0187844359382 120.462124839939,16.0186259659853 120.462018915305,16.0181845366138 120.461682770029,16.0179078950267 120.461342168354,16.0176792818848 120.461102947992,16.017471948584 120.4606035197,16.0171661283686 120.459747865045,16.0167412405229 120.4597395474,16.0167651252193</coordinates></LineString><LineString><coordinates>120.462327597047,16.0230585046269 120.462879881614,16.0234146941741 120.463580054216,16.023780780014 120.463902774352,16.0239658544414 120.464668914153,16.024423188261</coordinates></LineString><LineString><coordinates>120.462327597047,16.0230585046269 120.462353292112,16.0229525739668</coordinates></LineString><LineString><coordinates>120.462327597047,16.0230585046269 120.462752886017,16.0228322698612 120.46303401678,16.0226813798223 120.463392532179,16.0224788779637 120.463749983624,16.0222393672739 120.46405966251,16.0219896907424 120.464419206748,16.021695174442 120.464721311253,16.0214537345128 120.465014632898,16.021206307257 120.465289109729,16.0209108710581 120.465598832924,16.0206516483262 120.465920843148,16.0203949200726 120.46626001347,16.0201348085078 120.466580907269,16.0198780737221 120.46690040271,16.0196285731997 120.467325927456,16.0193001479249 120.467751380116,16.0189610754975 120.468203254549,16.0186054171749 120.468628808804,16.0182747800846 120.469126697254,16.0178839306124 120.469570287303,16.0175819972711 120.470158617337,16.0172971840994 120.470579973747,16.016971326949 120.470906859303,16.0167217902387 120.471247082631,16.0164879723983</coordinates></LineString><LineString><coordinates>120.47896563901,16.0011259929401 120.479103972793,16.0005060919773 120.479243762278,15.999777178868 120.479335975533,15.9993013655107 120.47942179596,15.9987839058111 120.479503949187,15.9982892601625 120.479587988205,15.9976950080963 120.479683932027,15.9972717195346</coordinates></LineString></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>

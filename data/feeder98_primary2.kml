@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document id="root_doc">
+    <Schema id="feeder98_primary2.schema">
+      <SimpleField name="JAEDType" type="string"/>
+      <SimpleField name="SectionID" type="string"/>
+      <SimpleField name="FromBus" type="string"/>
+      <SimpleField name="ToBus" type="string"/>
+      <SimpleField name="Phase" type="string"/>
+      <SimpleField name="PhaseCondUnit" type="string"/>
+      <SimpleField name="PhaseCondStrands" type="string"/>
+      <SimpleField name="PhaseCondType" type="string"/>
+      <SimpleField name="PhaseCondSize" type="string"/>
+      <SimpleField name="NeutralCondUnit" type="string"/>
+      <SimpleField name="NeutralCondStrands" type="string"/>
+      <SimpleField name="NeutralCondType" type="string"/>
+      <SimpleField name="NeutralCondSize" type="string"/>
+      <SimpleField name="length" type="string"/>
+      <SimpleField name="D12" type="string"/>
+      <SimpleField name="D23" type="string"/>
+      <SimpleField name="D13" type="string"/>
+      <SimpleField name="D1n" type="string"/>
+      <SimpleField name="D2n" type="string"/>
+      <SimpleField name="D3n" type="string"/>
+    </Schema>
+    <Document id="feeder98_primary2">
+      <name>feeder98_primary2</name>
+      <Placemark id="feeder98_primary2.1">
+        <ExtendedData>
+          <SchemaData schemaUrl="#feeder98_primary2.schema">
+            <SimpleData name="JAEDType">MVLine</SimpleData>
+            <SimpleData name="SectionID">DX120599488821588186400P</SimpleData>
+            <SimpleData name="FromBus">PP120599469881588184360</SimpleData>
+            <SimpleData name="ToBus">DT120599488821588186400P</SimpleData>
+            <SimpleData name="Phase">AC</SimpleData>
+            <SimpleData name="PhaseCondUnit">AWG</SimpleData>
+            <SimpleData name="PhaseCondStrands">6/1</SimpleData>
+            <SimpleData name="PhaseCondType">ACSR</SimpleData>
+            <SimpleData name="PhaseCondSize">2/0</SimpleData>
+            <SimpleData name="NeutralCondUnit">AWG</SimpleData>
+            <SimpleData name="NeutralCondStrands">6/1</SimpleData>
+            <SimpleData name="NeutralCondType">ACSR</SimpleData>
+            <SimpleData name="NeutralCondSize">1/0</SimpleData>
+            <SimpleData name="length">3.03909898681706</SimpleData>
+            <SimpleData name="D12">1.2</SimpleData>
+            <SimpleData name="D23">1.2</SimpleData>
+            <SimpleData name="D13">2.25</SimpleData>
+            <SimpleData name="D1n">1.3</SimpleData>
+            <SimpleData name="D2n">1</SimpleData>
+            <SimpleData name="D3n">1.3</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>
+              120.597629945376,15.8851122110209,0
+              120.597582135921,15.8850837426956,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.598596127184,15.8834272374215,0
+              120.598596008247,15.8833790392566,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.59913021602,15.8792184156836,0
+              120.599139494641,15.8792993671959,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.599469881339,15.8818436039427,0
+              120.599488818815,15.8818640012072,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.601495271873,15.878090753893,0
+              120.601456927645,15.8780872116086,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.601907680891,15.8773533003255,0
+              120.601858146917,15.8772637176183,0
+            </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Document>
+  </Document>
+</kml>

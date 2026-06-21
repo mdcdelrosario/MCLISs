@@ -1,0 +1,338 @@
+<div id="app" class="container-fluid py-3">
+    <div class="w3-row">
+        <div class="w3-col l3">
+            <div class="w3-card-4 w3-border w3-padding "
+                style="display: flex; flex-direction: column; justify-content: stretch;">
+                <!-- === Total Summary === -->
+                <div class="w3-row">
+                    <div class="w3-col l12 w3-center">
+                        <strong>TOTAL PANELCO LOAD</strong>
+                    </div>
+                </div>
+                <hr>
+                <div class="w3-row" v-if="total" style="flex: 1 1 auto;">
+                    <div class="w3-col l12" v-for="(item, idx) in totalCards" :key="idx">
+                        <div class="w3-row">
+                            <div class="w3-col l6">{{ item.title }}</div>
+                            <div class="w3-col l6">
+                                <input type="text" class="readonly-textbox" :value="item.value + ' ' + item.unit"
+                                    readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <!-- === Charts === -->
+            <div class="w3-card-4 w3-border w3-padding ">
+                <div class="w3-row">
+                    <div class="w3-col l12 w3-center">
+                        <div class="w3-row">
+                            <div class="w3-col l12 w3-center">
+                                <strong>LOAD CHART</strong>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="w3-row">
+                            <div class="w3-col l12 w3-center">
+                                <div style="display: flex; justify-content: center;">
+                                    <canvas id="pieChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-col l9">
+            <!-- === Substation Grid === -->
+            <div class="row" v-if="Object.keys(live).length">
+                <div class="w3-col l4" v-for="(info, substation) in live" :key="substation">
+                    <div v-if="info.MAIN" class="w3-card-4 w3-border w3-padding">
+                        <div class="w3-row">
+                            <div class="w3-col l12 w3-center">
+                                <strong>{{ substation }}</strong>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="w3-row">
+                            <!-- LEFT COLUMN -->
+                            <div class="w3-col l6">
+                                <div class="w3-row">
+                                    <div class="w3-col l4">P</div>
+                                    <div class="w3-col l8">
+                                        <input type="text" class="readonly-textbox"
+                                            :value="(info.MAIN.P_total || 0).toFixed(2)" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="w3-row">
+                                    <div class="w3-col l4">Q</div>
+                                    <div class="w3-col l8">
+                                        <input type="text" class="readonly-textbox"
+                                            :value="(info.MAIN.Q_total || 0).toFixed(2)" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="w3-row">
+                                    <div class="w3-col l4">S</div>
+                                    <div class="w3-col l8">
+                                        <input type="text" class="readonly-textbox"
+                                            :value="(info.MAIN.S_total || 0).toFixed(2)" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="w3-row">
+                                    <div class="w3-col l4">PF</div>
+                                    <div class="w3-col l8">
+                                        <input type="text" class="readonly-textbox"
+                                            :value="(info.MAIN.PF || 0).toFixed(2)" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- RIGHT COLUMN -->
+                            <div class="w3-col l6">
+                                <div class="w3-row">
+                                    <div class="w3-col l4">V</div>
+                                    <div class="w3-col l8">
+                                        <input type="text" class="readonly-textbox"
+                                            :value="(info.MAIN.Voltage || 0).toFixed(2)" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="w3-row">
+                                    <div class="w3-col l4">I</div>
+                                    <div class="w3-col l8">
+                                        <input type="text" class="readonly-textbox"
+                                            :value="(info.MAIN.Current || 0).toFixed(2)" readonly>
+                                    </div>
+                                </div>
+
+
+                                <div class="w3-row">
+                                    <div class="w3-col l4">F</div>
+                                    <div class="w3-col l8">
+                                        <input type="text" class="readonly-textbox"
+                                            :value="(info.MAIN.Frequency || 0).toFixed(2)" readonly>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row">
+        <div class="w3-col l12">
+            <div class="w3-card-4 w3-border w3-padding "
+                style="display: flex; flex-direction: column; justify-content: stretch;">
+                <div id="chart-container" style="flex: 1 1 auto;">
+                    <canvas id="totalChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    new Vue({
+        el: "#app",
+        data() {
+            return {
+                live: {},
+                total: { P_total: 0, Q_total: 0, S_total: 0 },
+                history: [],
+                pieChart: null,
+                barChart: null
+            };
+        },
+
+        computed: {
+            totalCards() {
+                return [
+                    { title: "APPARENT POWER", value: this.total?.S_total || 0, unit: "MVA", class: "text-primary" },
+                    { title: "REAL POWER", value: this.total?.P_total || 0, unit: "MW", class: "text-success" },
+                    { title: "REACTIVE POWER", value: this.total?.Q_total || 0, unit: "MVAR", class: "text-info" }
+                ];
+            }
+        },
+
+        mounted() {
+            this.fetchData();
+            setInterval(() => this.fetchData(), 5000);
+        },
+
+        methods: {
+            async fetchData() {
+                try {
+                    const res = await fetch(`${window.API_URL}getDashData`);
+                    const data = await res.json();
+
+                    this.live = data.live || {};
+                    this.total = data.total || { P_total: 0, Q_total: 0, S_total: 0 };
+                    this.history = data.history || [];
+
+                    this.$nextTick(() => this.renderCharts());
+                } catch (err) {
+                    console.error("Error loading dashboard data:", err);
+                }
+            },
+
+
+            renderCharts() {
+                // === PIE CHART ===
+                const pieCanvas = document.getElementById("pieChart");
+                if (pieCanvas) {
+                    const pieCtx = pieCanvas.getContext("2d");
+
+                    const subs = Object.keys(this.live || {});
+                    const sValues = subs.map(s => {
+                        const sub = this.live[s];
+                        if (!sub) return 0;
+
+                        // MAIN → use S_total
+                        if (sub.MAIN && sub.MAIN.S_total != null)
+                            return parseFloat(sub.MAIN.S_total) || 0;
+
+                        // Feeders → sum S_total
+                        if (sub.Feeders && typeof sub.Feeders === "object")
+                            return Object.values(sub.Feeders).reduce(
+                                (sum, f) => sum + (parseFloat(f?.S_total) || 0),
+                                0
+                            );
+
+                        return 0;
+                    });
+
+                    // ✅ If pie chart already exists, update instead of recreate
+                    if (this.pieChart) {
+                        this.pieChart.data.labels = subs;
+                        this.pieChart.data.datasets[0].data = sValues;
+                        this.pieChart.update('none'); // 🔹 'none' = instant update, no animation
+                    } else {
+                        this.pieChart = new Chart(pieCtx, {
+                            type: "pie",
+                            data: {
+                                labels: subs,
+                                datasets: [
+                                    {
+                                        data: sValues,
+                                        backgroundColor: [
+                                            "#007bff", "#28a745", "#ffc107", "#dc3545",
+                                            "#17a2b8", "#6f42c1", "#fd7e14", "#20c997"
+                                        ],
+                                        borderWidth: 0
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                animation: false, // ✅ Disable animation
+                                plugins: {
+                                    legend: { display: false },
+                                    tooltip: {
+                                        callbacks: {
+                                            label: ctx => `${ctx.label}: ${ctx.parsed.toFixed(2)} MVA`
+                                        }
+                                    },
+                                    datalabels: {
+                                        color: "#fff",
+                                        font: { weight: "bold", size: 12 },
+                                        formatter: value => value.toFixed(2),
+                                        textAlign: "center",
+                                        anchor: "center",
+                                        clamp: true
+                                    }
+                                }
+                            },
+                            plugins: [ChartDataLabels]
+                        });
+                    }
+                }
+
+                // === LINE CHART ===
+                const totalCanvas = document.getElementById("totalChart");
+                if (totalCanvas) {
+                    const ctx = totalCanvas.getContext("2d");
+
+                    const labels = this.history.map(h => {
+                        const date = new Date(h.timestamp);
+                        const hh = String(date.getHours()).padStart(2, '0');
+                        const mm = String(date.getMinutes()).padStart(2, '0');
+                        return `${hh}:${mm}`;
+                    });
+                    const pData = this.history.map(h => h.p);
+                    const qData = this.history.map(h => h.q);
+                    const sData = this.history.map(h => h.s);
+
+                    if (this.barChart) {
+                        this.barChart.data.labels = labels;
+                        this.barChart.data.datasets[0].data = pData;
+                        this.barChart.data.datasets[1].data = qData;
+                        this.barChart.data.datasets[2].data = sData;
+                        this.barChart.update('none'); // 🔹 instant update
+                    } else {
+                        this.barChart = new Chart(ctx, {
+                            type: "line",
+                            data: {
+                                labels,
+                                datasets: [
+                                    {
+                                        label: "Real Power (P)",
+                                        data: pData,
+                                        borderColor: "#28a745",
+                                        borderWidth: 2,
+                                        fill: false,
+                                        tension: 0.3
+                                    },
+                                    {
+                                        label: "Reactive Power (Q)",
+                                        data: qData,
+                                        borderColor: "#ffc107",
+                                        borderWidth: 2,
+                                        fill: false,
+                                        tension: 0.3
+                                    },
+                                    {
+                                        label: "Apparent Power (S)",
+                                        data: sData,
+                                        borderColor: "#007bff",
+                                        borderWidth: 2,
+                                        fill: false,
+                                        tension: 0.3
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                animation: false, // ✅ Disable animation
+                                plugins: {
+                                    legend: { display: false },
+                                    tooltip: {
+                                        mode: "index",
+                                        intersect: false,
+                                        callbacks: {
+                                            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}`
+                                        }
+                                    }
+                                },
+                                interaction: { mode: "nearest", axis: "x", intersect: false },
+                            }
+                        });
+                    }
+                }
+            }
+        }
+    });
+</script>

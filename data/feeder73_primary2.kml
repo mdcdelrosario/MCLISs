@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document id="root_doc">
+    <Schema id="feeder73_primary2.schema">
+      <SimpleField name="JAEDType" type="string"/>
+      <SimpleField name="SectionID" type="string"/>
+      <SimpleField name="FromBus" type="string"/>
+      <SimpleField name="ToBus" type="string"/>
+      <SimpleField name="Phase" type="string"/>
+      <SimpleField name="PhaseCondUnit" type="string"/>
+      <SimpleField name="PhaseCondStrands" type="string"/>
+      <SimpleField name="PhaseCondType" type="string"/>
+      <SimpleField name="PhaseCondSize" type="string"/>
+      <SimpleField name="NeutralCondUnit" type="string"/>
+      <SimpleField name="NeutralCondStrands" type="string"/>
+      <SimpleField name="NeutralCondType" type="string"/>
+      <SimpleField name="NeutralCondSize" type="string"/>
+      <SimpleField name="length" type="string"/>
+      <SimpleField name="D12" type="string"/>
+      <SimpleField name="D23" type="string"/>
+      <SimpleField name="D13" type="string"/>
+      <SimpleField name="D1n" type="string"/>
+      <SimpleField name="D2n" type="string"/>
+      <SimpleField name="D3n" type="string"/>
+    </Schema>
+    <Document id="feeder73_primary2">
+      <name>feeder73_primary2</name>
+      <Placemark id="feeder73_primary2.1">
+        <ExtendedData>
+          <SchemaData schemaUrl="#feeder73_primary2.schema">
+            <SimpleData name="JAEDType">MVLine</SimpleData>
+            <SimpleData name="SectionID">DX120532813351605252384</SimpleData>
+            <SimpleData name="FromBus">PP120532715211605261291</SimpleData>
+            <SimpleData name="ToBus">PP120532813351605252384</SimpleData>
+            <SimpleData name="Phase">CAN</SimpleData>
+            <SimpleData name="PhaseCondUnit">AWG</SimpleData>
+            <SimpleData name="PhaseCondStrands">6/1</SimpleData>
+            <SimpleData name="PhaseCondType">ACSR</SimpleData>
+            <SimpleData name="PhaseCondSize">2/0</SimpleData>
+            <SimpleData name="NeutralCondUnit">AWG</SimpleData>
+            <SimpleData name="NeutralCondStrands">6/1</SimpleData>
+            <SimpleData name="NeutralCondType">ACSR</SimpleData>
+            <SimpleData name="NeutralCondSize">1/0</SimpleData>
+            <SimpleData name="length">14.4156095302531</SimpleData>
+            <SimpleData name="D12">1.2</SimpleData>
+            <SimpleData name="D23">1.2</SimpleData>
+            <SimpleData name="D13">2.25</SimpleData>
+            <SimpleData name="D1n">1.3</SimpleData>
+            <SimpleData name="D2n">1</SimpleData>
+            <SimpleData name="D3n">1.3</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <LineString>
+          <coordinates>
+            120.532715210627,16.0526129087635,0
+            120.532813346226,16.0525238390255,0
+            120.532328031972,16.0525610305088,0
+            120.531904163249,16.0526853489544,0
+            120.531665297927,16.0526619933279,0
+            120.531455522956,16.0526139318272,0
+            120.531191293124,16.0525319346912,0
+            120.530968349185,16.0524710979679,0
+            120.530778433978,16.0523864555393,0
+            120.530599528348,16.052320328617,0
+            120.530360070043,16.0522039451803,0
+            120.530137126104,16.0520875616756,0
+            120.52995546808,16.0519632428568,0
+            120.529548113723,16.0516987344734,0
+            120.529627933168,16.0510718482811,0
+            120.529374712882,16.05083114451,0
+            120.528978368102,16.0504925717916,0
+            120.528667347545,16.0502624478185,0
+            120.528185678542,16.0502756733414,0
+            120.52779483855,16.0503894128021,0
+            120.527192064197,16.0501645789218,0
+            120.526655347307,16.0498841974919,0
+            120.52624799295,16.0493974967141,0
+            120.525903943662,16.0491065337245,0
+            120.52547457015,16.0489372459713,0
+            120.525045568984,16.0487615089283,0
+            120.524890187619,16.0486855362144,0
+            120.52445948138,16.0485073931854,0
+            120.524116006785,16.0483790253157,0
+            120.523955173442,16.0482349388328,0
+            120.523279128207,16.048069894188,0
+            120.522624890881,16.0478786518095,0
+            120.522464057539,16.0478026787589,0
+            120.521973379545,16.0476035768335,0
+            120.52158083715,16.0473258817105,0
+            120.521324594198,16.0472001328482,0
+            120.520863902082,16.0470350873459,0
+            120.520253280578,16.0467285739076,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Document>
+  </Document>
+</kml>

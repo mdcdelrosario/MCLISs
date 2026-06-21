@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Allow /api/uptcrewloc and /api/ugreeting without .php extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^uptcrewloc$ uptcrewloc.php [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ugreeting$ ugreeting.php [L,QSA]

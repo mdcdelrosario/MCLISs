@@ -1,0 +1,221 @@
+{
+  "substationTitle": "",
+  "feederMapping": {
+    "urdaneta1": [11, 12, 13, 14, 15, 16],
+    "urdaneta2": [86, 87, 88, 89],
+    "urdaneta3": [111, 112, 113, 114, 115, 116],
+    "binalonan1": [21, 22, 73],
+    "binalonan2": [74, 75, 76],
+    "pozorrubio": [101, 102, 103, 104],
+    "trenchera": [31, 32],
+    "barangobong": [63, 64, 65, 66],
+    "umingan": [41, 42, 43, 44],
+    "tomana": [51, 52, 53, 54],
+    "carmen": [95, 96, 97, 98]
+  },
+  "feeders": {
+    "main": {
+      "title": "MAIN (TOTAL LOAD)",
+      "voltages": [
+        { "label": "VAB", "value": "13.5 kV" },
+        { "label": "VBC", "value": "13.3 kV" },
+        { "label": "VCA", "value": "13.0 kV" }
+      ],
+      "currents": [
+        { "label": "IA", "value": "102 A" },
+        { "label": "IB", "value": "98 A" },
+        { "label": "IC", "value": "101 A" },
+        { "label": "IN", "value": "97 A" }
+      ],
+      "powers": [
+        { "label": "P", "value": "510 kW" },
+        { "label": "Q", "value": "95 kVAR" },
+        { "label": "A", "value": "505 kVA" }
+      ],
+      "misc": [
+        { "label": "PF", "value": "0.965" },
+        { "label": "Freq", "value": "59.60 Hz" },
+        { "label": "kWHr", "value": "5193670" },
+        { "label": "Dem", "value": "5710.00" }
+      ]
+    },
+    "feeder1": {
+      "title": "FEEDER 11",
+      "voltages": [
+        { "label": "VAB", "value": "13.1 kV" },
+        { "label": "VBC", "value": "13.3 kV" },
+        { "label": "VCA", "value": "13.0 kV" }
+      ],
+      "currents": [
+        { "label": "IA", "value": "102 A" },
+        { "label": "IB", "value": "98 A" },
+        { "label": "IC", "value": "101 A" },
+        { "label": "IN", "value": "97 A" }
+      ],
+      "powers": [
+        { "label": "P", "value": "510 kW" },
+        { "label": "Q", "value": "95 kVAR" },
+        { "label": "A", "value": "505 kVA" }
+      ],
+      "misc": [
+        { "label": "PF", "value": "0.965" },
+        { "label": "Freq", "value": "59.60 Hz" },
+        { "label": "kWHr", "value": "5193670" },
+        { "label": "Dem", "value": "5710.00" }
+      ]
+    },
+    "feeder2": {
+      "title": "FEEDER 12",
+      "voltages": [
+        { "label": "VAB", "value": "12.6 kV" },
+        { "label": "VBC", "value": "12.9 kV" },
+        { "label": "VCA", "value": "13.0 kV" }
+      ],
+      "currents": [
+        { "label": "IA", "value": "92 A" },
+        { "label": "IB", "value": "88 A" },
+        { "label": "IC", "value": "91 A" },
+        { "label": "IN", "value": "89 A" }
+      ],
+      "powers": [
+        { "label": "P", "value": "460 kW" },
+        { "label": "Q", "value": "85 kVAR" },
+        { "label": "A", "value": "455 kVA" }
+      ],
+      "misc": [
+        { "label": "PF", "value": "0.955" },
+        { "label": "Freq", "value": "59.75 Hz" },
+        { "label": "kWHr", "value": "4190000" },
+        { "label": "Dem", "value": "4725.50" }
+      ]
+    },
+    "feeder3": {
+      "title": "FEEDER 13",
+      "voltages": [
+        { "label": "VAB", "value": "12.6 kV" },
+        { "label": "VBC", "value": "12.9 kV" },
+        { "label": "VCA", "value": "13.0 kV" }
+      ],
+      "currents": [
+        { "label": "IA", "value": "92 A" },
+        { "label": "IB", "value": "88 A" },
+        { "label": "IC", "value": "91 A" },
+        { "label": "IN", "value": "89 A" }
+      ],
+      "powers": [
+        { "label": "P", "value": "460 kW" },
+        { "label": "Q", "value": "85 kVAR" },
+        { "label": "A", "value": "455 kVA" }
+      ],
+      "misc": [
+        { "label": "PF", "value": "0.955" },
+        { "label": "Freq", "value": "59.75 Hz" },
+        { "label": "kWHr", "value": "4190000" },
+        { "label": "Dem", "value": "4725.50" }
+      ]
+    },
+    "feeder4": {
+      "title": "FEEDER 14",
+      "voltages": [
+        { "label": "VAB", "value": "12.6 kV" },
+        { "label": "VBC", "value": "12.9 kV" },
+        { "label": "VCA", "value": "13.0 kV" }
+      ],
+      "currents": [
+        { "label": "IA", "value": "92 A" },
+        { "label": "IB", "value": "88 A" },
+        { "label": "IC", "value": "91 A" },
+        { "label": "IN", "value": "89 A" }
+      ],
+      "powers": [
+        { "label": "P", "value": "460 kW" },
+        { "label": "Q", "value": "85 kVAR" },
+        { "label": "A", "value": "455 kVA" }
+      ],
+      "misc": [
+        { "label": "PF", "value": "0.955" },
+        { "label": "Freq", "value": "59.75 Hz" },
+        { "label": "kWHr", "value": "4190000" },
+        { "label": "Dem", "value": "4725.50" }
+      ]
+    },
+    "feeder5": {
+      "title": "FEEDER 15",
+      "voltages": [
+        { "label": "VAB", "value": "12.6 kV" },
+        { "label": "VBC", "value": "12.9 kV" },
+        { "label": "VCA", "value": "13.0 kV" }
+      ],
+      "currents": [
+        { "label": "IA", "value": "92 A" },
+        { "label": "IB", "value": "88 A" },
+        { "label": "IC", "value": "91 A" },
+        { "label": "IN", "value": "89 A" }
+      ],
+      "powers": [
+        { "label": "P", "value": "460 kW" },
+        { "label": "Q", "value": "85 kVAR" },
+        { "label": "A", "value": "455 kVA" }
+      ],
+      "misc": [
+        { "label": "PF", "value": "0.955" },
+        { "label": "Freq", "value": "59.75 Hz" },
+        { "label": "kWHr", "value": "4190000" },
+        { "label": "Dem", "value": "4725.50" }
+      ]
+    },
+    "feeder6": {
+      "title": "FEEDER 16",
+      "voltages": [
+        { "label": "VAB", "value": "12.6 kV" },
+        { "label": "VBC", "value": "12.9 kV" },
+        { "label": "VCA", "value": "13.0 kV" }
+      ],
+      "currents": [
+        { "label": "IA", "value": "92 A" },
+        { "label": "IB", "value": "88 A" },
+        { "label": "IC", "value": "91 A" },
+        { "label": "IN", "value": "89 A" }
+      ],
+      "powers": [
+        { "label": "P", "value": "460 kW" },
+        { "label": "Q", "value": "85 kVAR" },
+        { "label": "A", "value": "455 kVA" }
+      ],
+      "misc": [
+        { "label": "PF", "value": "0.955" },
+        { "label": "Freq", "value": "59.75 Hz" },
+        { "label": "kWHr", "value": "4190000" },
+        { "label": "Dem", "value": "4725.50" }
+      ]
+    }
+  },
+  "histories": {
+    "main": [
+      { "x": "1 am", "p": 120, "q": 60, "va": 130 },
+      { "x": "2 am", "p": 125, "q": 62, "va": 135 },
+      { "x": "3 am", "p": 130, "q": 65, "va": 140 },
+      { "x": "4 am", "p": 135, "q": 67, "va": 145 },
+      { "x": "5 am", "p": 140, "q": 69, "va": 150 },
+      { "x": "6 am", "p": 145, "q": 70, "va": 155 },
+      { "x": "7 am", "p": 150, "q": 72, "va": 160 },
+      { "x": "8 am", "p": 155, "q": 74, "va": 165 },
+      { "x": "9 am", "p": 160, "q": 76, "va": 170 },
+      { "x": "10 am", "p": 165, "q": 78, "va": 175 },
+      { "x": "11 am", "p": 170, "q": 80, "va": 180 },
+      { "x": "12 pm", "p": 175, "q": 82, "va": 185 },
+      { "x": "1 pm", "p": 180, "q": 85, "va": 190 },
+      { "x": "2 pm", "p": 185, "q": 88, "va": 195 },
+      { "x": "3 pm", "p": 180, "q": 87, "va": 190 },
+      { "x": "4 pm", "p": 175, "q": 85, "va": 185 },
+      { "x": "5 pm", "p": 170, "q": 82, "va": 180 },
+      { "x": "6 pm", "p": 165, "q": 80, "va": 175 },
+      { "x": "7 pm", "p": 160, "q": 78, "va": 170 },
+      { "x": "8 pm", "p": 155, "q": 76, "va": 165 },
+      { "x": "9 pm", "p": 150, "q": 74, "va": 160 },
+      { "x": "10 pm", "p": 145, "q": 72, "va": 155 },
+      { "x": "11 pm", "p": 140, "q": 70, "va": 150 },
+      { "x": "12 am", "p": 135, "q": 68, "va": 145 }
+    ]
+  }
+}

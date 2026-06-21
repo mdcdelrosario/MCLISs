@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document id="root_doc">
+    <Schema id="feeder98_primary3.schema">
+      <SimpleField name="JAEDType" type="string"/>
+      <SimpleField name="SectionID" type="string"/>
+      <SimpleField name="FromBus" type="string"/>
+      <SimpleField name="ToBus" type="string"/>
+      <SimpleField name="Phase" type="string"/>
+      <SimpleField name="PhaseCondUnit" type="string"/>
+      <SimpleField name="PhaseCondStrands" type="string"/>
+      <SimpleField name="PhaseCondType" type="string"/>
+      <SimpleField name="PhaseCondSize" type="string"/>
+      <SimpleField name="NeutralCondUnit" type="string"/>
+      <SimpleField name="NeutralCondStrands" type="string"/>
+      <SimpleField name="NeutralCondType" type="string"/>
+      <SimpleField name="NeutralCondSize" type="string"/>
+      <SimpleField name="length" type="string"/>
+      <SimpleField name="D12" type="string"/>
+      <SimpleField name="D23" type="string"/>
+      <SimpleField name="D13" type="string"/>
+      <SimpleField name="D1n" type="string"/>
+      <SimpleField name="D2n" type="string"/>
+      <SimpleField name="D3n" type="string"/>
+    </Schema>
+    <Document id="feeder98_primary3">
+      <name>feeder98_primary3</name>
+      <Placemark id="feeder98_primary3.1">
+        <ExtendedData>
+          <SchemaData schemaUrl="#feeder98_primary3.schema">
+            <SimpleData name="JAEDType">MVLine</SimpleData>
+            <SimpleData name="SectionID">PRI-MVPole-120.603725947537000-15.867818395731800_SWINGBUS</SimpleData>
+            <SimpleData name="FromBus">SWINGBUS</SimpleData>
+            <SimpleData name="ToBus">MVPole-120.603725947537000-15.867818395731800</SimpleData>
+            <SimpleData name="Phase">ABCN</SimpleData>
+            <SimpleData name="PhaseCondUnit">MCM</SimpleData>
+            <SimpleData name="PhaseCondStrands">26/7</SimpleData>
+            <SimpleData name="PhaseCondType">ACSR</SimpleData>
+            <SimpleData name="PhaseCondSize">336.4</SimpleData>
+            <SimpleData name="NeutralCondUnit">MCM</SimpleData>
+            <SimpleData name="NeutralCondStrands">26/7</SimpleData>
+            <SimpleData name="NeutralCondType">ACSR</SimpleData>
+            <SimpleData name="NeutralCondSize">336.4</SimpleData>
+            <SimpleData name="length">15.2090006611634</SimpleData>
+            <SimpleData name="D12">1.2</SimpleData>
+            <SimpleData name="D23">1.2</SimpleData>
+            <SimpleData name="D13">2.25</SimpleData>
+            <SimpleData name="D1n">1.3</SimpleData>
+            <SimpleData name="D2n">1</SimpleData>
+            <SimpleData name="D3n">1.3</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>
+              120.598291242253,15.8839600855504,0
+              120.598109024072,15.884370829773,0
+              120.597930596048,15.8846550429035,0
+              120.597819280999,15.8848596124878,0
+              120.597629945376,15.8851122110209,0
+              120.597504466712,15.8854119253381,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.598291242253,15.8839600855504,0
+              120.597953072017,15.8837695105147,0
+              120.59794080625,15.8837300645329,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.598452765293,15.8837179640692,0
+              120.598291242253,15.8839600855504,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.598452765293,15.8837179640692,0
+              120.598226517258,15.8835863152905,0
+              120.597930387,15.8834074032598,0
+              120.598015000026,15.8832383333367,0
+              120.59823333336,15.8829100000034,0
+              120.598383918729,15.8826952082782,0
+              120.598430095531,15.8826711710384,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.598596127184,15.8834272374215,0
+              120.598452765293,15.8837179640692,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.598596127184,15.8834272374215,0
+              120.598566066133,15.8834150775214,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.599272104197,15.8822051249753,0
+              120.599136133245,15.8824611159226,0
+              120.598956212673,15.8827821339015,0
+              120.598818560497,15.8830224846989,0
+              120.598596127184,15.8834272374215,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.599792706799,15.8812201931102,0
+              120.599459357382,15.881042918204,0
+              120.599090738695,15.8808612867103,0
+              120.599093283637,15.8808042931939,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.59978654061,15.8795399126584,0
+              120.599500258709,15.8793929999265,0
+              120.59913021602,15.8792184156836,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.599792706799,15.8812201931102,0
+              120.599679904286,15.8814570990984,0
+              120.599469881339,15.8818436039427,0
+              120.599272104197,15.8822051249753,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.599272104197,15.8822051249753,0
+              120.599584575373,15.8820687888602,0
+              120.599601179853,15.8821221604019,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.600148852522,15.8796301268694,0
+              120.59978654061,15.8795399126584,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.59978654061,15.8795399126584,0
+              120.599786999866,15.8796369429531,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.600331277466,15.8802502919282,0
+              120.600243067615,15.880410694221,0
+              120.600064926624,15.8807381617102,0
+              120.599928531258,15.8809785529921,0
+              120.599792706799,15.8812201931102,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.600507314601,15.87994500671,0
+              120.600148852522,15.8796301268694,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.600148852522,15.8796301268694,0
+              120.600188598611,15.8795883800613,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.600331277466,15.8802502919282,0
+              120.600275069572,15.8802087503136,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.600507314601,15.87994500671,0
+              120.600331277466,15.8802502919282,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.601255975006,15.8785586156838,0
+              120.601119581067,15.8787827761587,0
+              120.60085865353,15.8792391621415,0
+              120.600700199353,15.8795828748698,0
+              120.600507314601,15.87994500671,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.601255975006,15.8785586156838,0
+              120.601199045362,15.8784993139709,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.602743042947,15.8756306997528,0
+              120.602607550394,15.87604742475,0
+              120.602546158177,15.876178916573,0
+              120.602365094295,15.8765031662937,0
+              120.602273713302,15.8766964967911,0
+              120.602079804113,15.8770707276633,0
+              120.601907680891,15.8773533003255,0
+              120.601763072478,15.8776192459734,0
+              120.601495271873,15.878090753893,0
+              120.601416993612,15.8782188455929,0
+              120.601255975006,15.8785586156838,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.602743042947,15.8756306997528,0
+              120.602511337448,15.8755726450952,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.603092374824,15.8708861884774,0
+              120.603091502421,15.870940413618,0
+              120.603063404528,15.8717726798019,0
+              120.603030379675,15.872181986983,0
+              120.603033101688,15.8725689603796,0
+              120.602978766921,15.8730936985689,0
+              120.602955529934,15.8737878353657,0
+              120.602956795972,15.8744651542358,0
+              120.602894173363,15.8749908046193,0
+              120.602794546485,15.8754773158723,0
+              120.602743042947,15.8756306997528,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.603092374824,15.8708861884774,0
+              120.603071693392,15.8708904968426,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.603227067694,15.8677514915798,0
+              120.60321446608,15.8683916535711,0
+              120.603190472606,15.8690784860103,0
+              120.603151077293,15.8695818674146,0
+              120.603102086101,15.870716656766,0
+              120.603092374824,15.8708861884774,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.603853993515,15.8678780535166,0
+              120.603725947539,15.8678183957319,0
+              120.603503238551,15.8677675936797,0
+              120.603481253384,15.8677666842622,0
+              120.603227067694,15.8677514915798,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.603227067694,15.8677514915798,0
+              120.603223064828,15.8677145762635,0
+              120.603232552385,15.8672674984225,0
+              120.603257711503,15.8668428346371,0
+              120.603276507036,15.8664091317295,0
+              120.603288377052,15.8659594741552,0
+              120.603293034179,15.8656134334273,0
+              120.603322701168,15.864945453689,0
+              120.603360228225,15.864450978243,0
+              120.603383673339,15.864075844029,0
+              120.603395850365,15.863543127512,0
+              120.603414418639,15.863159309549,0
+              120.603431432284,15.8628878194649,0
+              120.603451633956,15.862551692841,0
+              120.603470364033,15.8621210223895,0
+              120.60348761877,15.8617011571181,0
+              120.603498237739,15.8612820482164,0
+              120.603501655815,15.8608839092734,0
+              120.603510185064,15.8604877913528,0
+              120.603802555631,15.8605214197727,0
+            </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Document>
+  </Document>
+</kml>

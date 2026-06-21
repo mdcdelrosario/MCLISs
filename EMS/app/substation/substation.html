@@ -1,0 +1,96 @@
+<div id="app">
+    <div class="w3-card-4 w3-border w3-padding-large">
+        <b>SUBSTATION | {{ substationTitle }}</b>
+    </div>
+    <hr>
+
+    <div class="w3-row">
+        <div class="w3-col l3 ">
+            <feeder-card feeder="main" :type="feeders"></feeder-card>
+            <feeder-graph feeder="main" :type="histories"></feeder-graph>
+        </div>
+        <div class="w3-col l3 ">
+            <feeder-card feeder="feeder1" :type="feeders"></feeder-card>
+            <feeder-card feeder="feeder4" :type="feeders"></feeder-card>
+        </div>
+        <div class="w3-col l3 ">
+            <feeder-card feeder="feeder2" :type="feeders"></feeder-card>
+            <feeder-card feeder="feeder5" :type="feeders"></feeder-card>
+        </div>
+        <div class="w3-col l3 ">
+            <feeder-card feeder="feeder3" :type="feeders"></feeder-card>
+            <feeder-card feeder="feeder6" :type="feeders"></feeder-card>
+        </div>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                substationTitle: '',
+                feeders: {},        // dynamically filled from API
+                histories: {},      // (future: for graphs)
+                feederMapping: {},  // from static or API
+                poller: null
+            };
+        },
+        mounted() {
+            // Load initial static data for feeder mapping and histories
+            fetch('app/data/data.json')
+                .then(res => res.json())
+                .then(data => {
+                    this.histories = data.histories;
+                    this.feederMapping = data.feederMapping;
+
+                    // Get current substation name from session
+                    const substationName = sessionStorage.getItem('currentSubstation') || 'Unknown Substation';
+                    this.substationTitle = this.formatSubstationName(substationName);
+
+                    const feederNumbers = this.feederMapping[substationName] || [];
+
+                    if (feederNumbers.length === 0) {
+                        console.warn("No feeder mapping found for", substationName);
+                        return;
+                    }
+
+                    // Start polling API every 5 seconds
+                    this.fetchFeedersFromApi(feederNumbers);
+                    this.poller = setInterval(() => {
+                        this.fetchFeedersFromApi(feederNumbers);
+                    }, 5000);
+                });
+        },
+        beforeDestroy() {
+            clearInterval(this.poller);
+        },
+        methods: {
+            formatSubstationName(raw) {
+                // Convert 'urdaneta1' -> 'URDANETA 1'
+                let text = raw.replace(/([a-z]+)([0-9]+)/i, '$1 $2');
+                return text.toUpperCase();
+            },
+            fetchFeedersFromApi(feederNumbers) {
+                const feedersParam = feederNumbers.join(','); // Convert array -> "51,52,53,54"
+                fetch(`${window.API_URL}emslive?feeders=${feedersParam}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.feeders) {
+                            this.feeders = data.feeders;
+                            for (let i = 1; i <= feederNumbers.length; i++) {
+                                const feederKey = `feeder${i}`;
+                                if (this.feeders[feederKey]) {
+                                    this.feeders[feederKey].title = `FEEDER ${feederNumbers[i - 1]}`;
+                                }
+                            }
+                        }
+                        if (data.histories) {
+                            this.histories = data.histories; // ✅ Now from API
+                        }
+                    })
+                    .catch(err => console.error("API Fetch Error:", err));
+            }
+        }
+    });
+</script>

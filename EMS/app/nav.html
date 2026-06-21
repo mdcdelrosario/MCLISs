@@ -1,0 +1,108 @@
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="padding-top: 60px;width:300px;">
+
+    <!-- Dashboard Button with Icon -->
+    <button class="w3-button w3-block w3-left-align" style="margin-top: 30px;" onclick="">
+        <i class="fa fa-tachometer-alt w3-margin-right"></i> Dashboard
+    </button>
+
+    <!-- Inquiry Button with Icon and Dropdown -->
+    <button class="w3-button w3-block w3-left-align" onclick="$('#navMaster').toggleClass('w3-hide w3-show');">
+        <i class="fa fa-solid fa-industry w3-margin-right"></i> Substation <i class="fa fa-caret-down"></i>
+    </button>
+
+    <!-- Dropdown Menu with Indentation -->
+    <div id="navMaster" class="w3-hide w3-white w3-card">
+        <div class="w3-bar-block w3-light-grey w3-border">
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;" onclick="loadSubstation('urdaneta1')">
+                <i class="fa-solid fa-industry w3-margin-right"></i> Urdaneta 1
+            </a>
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;" onclick="loadSubstation('urdaneta2')">
+                <i class="fa-solid fa-industry w3-margin-right"></i> Urdaneta 2
+            </a>
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;" onclick="loadSubstation('urdaneta3')">
+                <i class="fa-solid fa-industry w3-margin-right"></i> Urdaneta 3
+            </a>
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;"
+                onclick="loadSubstation('binalonan1')">
+                <i class="fa-solid fa-industry w3-margin-right"></i> Binalonan 1
+            </a>
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;"
+                onclick="loadSubstation('binalonan2')">
+                <i class="fa-solid fa-industry w3-margin-right"></i> Binalonan 2
+            </a>
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;"
+                onclick="loadSubstation('pozorrubio')">
+                <i class="fa-solid fa-industry w3-margin-right"></i> Pozorrubio
+            </a>
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;" onclick="loadSubstation('trenchera')">
+                <i class="fa-solid fa-industry w3-margin-right"></i> Trenchera
+            </a>
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;"
+                onclick="loadSubstation('barangobong')">
+                <i class="fa-solid fa-industry w3-margin-right"></i> Barangobong
+            </a>
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;" onclick="loadSubstation('umingan')">
+                <i class="fa-solid fa-industry w3-margin-right"></i> Umingan
+            </a>
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;" onclick="loadSubstation('tomana')">
+                <i class="fa-solid fa-industry w3-margin-right"></i> Tomana
+            </a>
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;" onclick="loadSubstation('carmen')">
+                <i class="fa-solid fa-industry w3-margin-right"></i> Carmen
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Inquiry Button with Icon and Dropdown -->
+    <button class="w3-button w3-block w3-left-align" onclick="$('#navReport').toggleClass('w3-hide w3-show');">
+        <i class="fa fa-solid fa-file-alt w3-margin-right"></i></i> Reports <i class="fa fa-caret-down"></i>
+    </button>
+
+    <!-- Dropdown Menu with Indentation -->
+    <div id="navReport" class="w3-hide w3-white w3-card">
+        <div class="w3-bar-block w3-light-grey w3-border">
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;" onclick="loadReport('daily')">
+                <i class="fa fa-solid fa-chart-bar w3-margin-right"></i> Daily Report
+            </a>
+
+            <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;" onclick="loadReport('monthly')">
+                <i class="fa fa-solid fa-chart-bar w3-margin-right"></i> Monthly Report
+            </a>
+
+            <!-- <a href="#" class="w3-bar-item w3-button" style="padding-left: 30px;" onclick="loadSubstation('urdaneta1')">
+                <i class="fa fa-solid fa-chart-bar w3-margin-right"></i> Monthly Summary
+            </a> -->
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function loadSubstation(name) {
+        sessionStorage.setItem('currentSubstation', name);
+        $('#main').load('app/substation/substation.html?v=' + new Date().getTime());
+    }
+
+    function loadReport(name) {
+        if (name === 'daily')
+            $('#main').load('app/reports/daily.html?v=' + new Date().getTime());
+        else if (name === 'monthly')
+            $('#main').load('app/reports/monthly.html?v=' + new Date().getTime());
+    }
+
+</script>

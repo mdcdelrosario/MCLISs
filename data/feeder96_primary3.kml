@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document id="root_doc">
+    <Schema id="feeder96_primary3.schema">
+      <SimpleField name="JAEDType" type="string"/>
+      <SimpleField name="SectionID" type="string"/>
+      <SimpleField name="FromBus" type="string"/>
+      <SimpleField name="ToBus" type="string"/>
+      <SimpleField name="Phase" type="string"/>
+      <SimpleField name="PhaseCondUnit" type="string"/>
+      <SimpleField name="PhaseCondStrands" type="string"/>
+      <SimpleField name="PhaseCondType" type="string"/>
+      <SimpleField name="PhaseCondSize" type="string"/>
+      <SimpleField name="NeutralCondUnit" type="string"/>
+      <SimpleField name="NeutralCondStrands" type="string"/>
+      <SimpleField name="NeutralCondType" type="string"/>
+      <SimpleField name="NeutralCondSize" type="string"/>
+      <SimpleField name="length" type="string"/>
+      <SimpleField name="D12" type="string"/>
+      <SimpleField name="D23" type="string"/>
+      <SimpleField name="D13" type="string"/>
+      <SimpleField name="D1n" type="string"/>
+      <SimpleField name="D2n" type="string"/>
+      <SimpleField name="D3n" type="string"/>
+    </Schema>
+    <Document id="feeder96_primary3">
+      <name>feeder96_primary3</name>
+      <Placemark id="feeder96_primary3.1">
+        <ExtendedData>
+          <SchemaData schemaUrl="#feeder96_primary3.schema">
+            <SimpleData name="JAEDType">MVLine</SimpleData>
+            <SimpleData name="SectionID">DX120603481661586785652</SimpleData>
+            <SimpleData name="FromBus">SWINGBUS</SimpleData>
+            <SimpleData name="ToBus">PP120603481661586785652</SimpleData>
+            <SimpleData name="Phase">ABCN</SimpleData>
+            <SimpleData name="PhaseCondUnit">MCM</SimpleData>
+            <SimpleData name="PhaseCondStrands">26/7</SimpleData>
+            <SimpleData name="PhaseCondType">ACSR</SimpleData>
+            <SimpleData name="PhaseCondSize">336.4</SimpleData>
+            <SimpleData name="NeutralCondUnit">AWG</SimpleData>
+            <SimpleData name="NeutralCondStrands">6/1</SimpleData>
+            <SimpleData name="NeutralCondType">ACSR</SimpleData>
+            <SimpleData name="NeutralCondSize">1/0</SimpleData>
+            <SimpleData name="length">19.5000209910946</SimpleData>
+            <SimpleData name="D12">1.2</SimpleData>
+            <SimpleData name="D23">1.2</SimpleData>
+            <SimpleData name="D13">2.25</SimpleData>
+            <SimpleData name="D1n">1.3</SimpleData>
+            <SimpleData name="D2n">1</SimpleData>
+            <SimpleData name="D3n">1.3</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <LineString>
+          <coordinates>
+            120.603662362012,15.8678325216328,0
+            120.603481659472,15.867856517464,0
+            120.603428029697,15.8681428336506,0
+            120.603382256608,15.8685613228851,0
+            120.603364698198,15.8689862292747,0
+            120.603357546544,15.8695277714559,0
+            120.603372750307,15.8700366122758,0
+            120.603350588674,15.8705990402036,0
+            120.603291553108,15.870981105835,0
+            120.603268,15.871362,0
+            120.603236,15.871749,0
+            120.603236,15.87214,0
+            120.603214459488,15.8725908171757,0
+            120.603194,15.8730479999999,0
+            120.603184,15.8734279999999,0
+            120.603188823401,15.8738269000383,0
+            120.60314737673,15.8741880059198,0
+            120.603119,15.874568,0
+            120.603071,15.874946,0
+            120.602996,15.875331,0
+            120.602901127321,15.8757996645697,0
+            120.60279,15.876088,0
+            120.602603405075,15.8764364403827,0
+            120.602459033492,15.8767328278394,0
+            120.602294054421,15.8770478287618,0
+            120.601896431018,15.8773499770006,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Document>
+  </Document>
+</kml>

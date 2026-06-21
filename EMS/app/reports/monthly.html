@@ -1,0 +1,303 @@
+<div id="app">
+    <div class="w3-card-4 w3-border w3-padding-large">
+        <b>MONTHLY REPORT</b>
+    </div>
+    <hr>
+    <div class="w3-card-4 w3-border w3-padding-large">
+        <div>
+            <label for="substationSelect">Substation:</label>
+            <select id="substationSelect" v-model="selectedSubstation" @change="updateFeeders" style="width: 200px;">
+                <option v-for="(feeders, substation) in feederMapping" :key="substation" :value="substation">
+                    {{ formatSubstationName(substation) }}
+                </option>
+            </select>
+            &nbsp;&nbsp;
+            <label for="feederSelect">Feeder:</label>
+            <select id="feederSelect" v-model="selectedFeeder" style="width: 200px;">
+                <option v-for="(feederNumber, index) in feederMapping[selectedSubstation]" :key="index"
+                    :value="feederNumber">
+                    FEEDER {{ feederNumber }}
+                </option>
+            </select>
+            &nbsp;&nbsp;
+            <label for="monthSelect">Month:</label>
+            <select id="monthSelect" v-model="selectedMonth">
+                <option v-for="month in months" :key="month.value" :value="month.value">
+                    {{ month.name }}
+                </option>
+            </select>
+            &nbsp;&nbsp;
+            <label for="yearSelect">Year:</label>
+            <select id="yearSelect" v-model="selectedYear">
+                <option v-for="year in years" :key="year" :value="year">
+                    {{ year }}
+                </option>
+            </select>
+            <button class="w3-button w3-blue" @click="applySelection">Apply</button>
+            <button class="w3-button w3-blue" @click="downloadCSV">
+                <i class="fa fa-download"></i> CSV
+            </button>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="report-container" style="position: relative;">
+
+        <!-- ✅ Loading overlay -->
+        <div v-if="loading" class="loading-overlay">
+            <div class="loading-box">
+                <i class="fa fa-spinner fa-spin fa-2x"></i>
+                <p><b>Please wait... Loading data</b></p>
+            </div>
+        </div>
+
+        <div v-html="headerContent"></div>
+
+        <div id="report-content" v-show="!loading">
+            <table class="w3-table w3-bordered w3-striped w3-border">
+                <thead>
+                    <tr>
+                        <th rowspan="2">Date</th>
+                        <th colspan="10" class="w3-center">MINIMUM</th>
+                        <th colspan="10" class="w3-center">MAXIMUM</th>
+                    </tr>
+                    <tr>
+                        <th>Time</th>
+                        <th>IA</th>
+                        <th>IB</th>
+                        <th>IC</th>
+                        <th>VA</th>
+                        <th>VB</th>
+                        <th>VC</th>
+                        <th>P</th>
+                        <th>Q</th>
+                        <th>S</th>
+                        <th>Time</th>
+                        <th>IA</th>
+                        <th>IB</th>
+                        <th>IC</th>
+                        <th>VA</th>
+                        <th>VB</th>
+                        <th>VC</th>
+                        <th>P</th>
+                        <th>Q</th>
+                        <th>S</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr v-for="(entry, index) in tableData" :key="index">
+                        <td style="text-align:center;">{{ formatDate(entry.daydate) }}</td>
+
+                        <!-- 🔹 MIN -->
+                        <td style="text-align:right;">{{ formatTime(entry.timestamp_min) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Ia_min || 0).toFixed(0) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Ib_min || 0).toFixed(0) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Ic_min || 0).toFixed(0) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Va_min || 0).toFixed(2) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Vb_min || 0).toFixed(2) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Vc_min || 0).toFixed(2) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.P_total_min || 0).toFixed(2) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Q_total_min || 0).toFixed(2) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.S_total_min || 0).toFixed(2) }}</td>
+
+                        <!-- 🔹 MAX -->
+                        <td style="text-align:right;">{{ formatTime(entry.timestamp_max) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Ia_max || 0).toFixed(0) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Ib_max || 0).toFixed(0) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Ic_max || 0).toFixed(0) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Va_max || 0).toFixed(2) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Vb_max || 0).toFixed(2) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Vc_max || 0).toFixed(2) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.P_total_max || 0).toFixed(2) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.Q_total_max || 0).toFixed(2) }}</td>
+                        <td style="text-align:right;">{{ Number(entry.S_total_max || 0).toFixed(2) }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div v-html="footerContent"></div>
+
+    </div>
+
+</div>
+
+<!-- ✅ CSS for loading overlay -->
+<style>
+    .loading-overlay {
+        position: absolute;
+        margin-top: 200px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.85);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+        text-align: center;
+        animation: fadeIn 0.3s ease-in;
+    }
+
+    .loading-box p {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #333;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                substationTitle: '',
+                feeders: {},
+                feederMapping: {},
+                selectedDate: new Date().toISOString().split('T')[0],
+                selectedSubstation: '',
+                selectedFeeder: '',
+                headerContent: '',
+                footerContent: '',
+                tableData: [],
+                loading: false, // ✅ added
+
+                months: [
+                    { name: 'January', value: 1 }, { name: 'February', value: 2 },
+                    { name: 'March', value: 3 }, { name: 'April', value: 4 },
+                    { name: 'May', value: 5 }, { name: 'June', value: 6 },
+                    { name: 'July', value: 7 }, { name: 'August', value: 8 },
+                    { name: 'September', value: 9 }, { name: 'October', value: 10 },
+                    { name: 'November', value: 11 }, { name: 'December', value: 12 },
+                ],
+
+                years: (() => {
+                    const startYear = 2025;
+                    const currentYear = new Date().getFullYear();
+                    const list = [];
+                    for (let y = startYear; y <= currentYear; y++) list.push(y);
+                    return list.reverse();
+                })(),
+
+                selectedMonth: new Date().getMonth() + 1,
+                selectedYear: new Date().getFullYear(),
+            };
+        },
+        mounted() {
+            fetch('app/reports/header.html').then(r => r.text()).then(d => this.headerContent = d);
+            fetch('app/reports/footer.html').then(r => r.text()).then(d => this.footerContent = d);
+            fetch('app/data/data.json')
+                .then(r => r.json())
+                .then(data => {
+                    this.feeders = data.feeders;
+                    this.feederMapping = data.feederMapping;
+                    const firstSub = Object.keys(this.feederMapping)[0];
+                    if (firstSub) {
+                        this.selectedSubstation = firstSub;
+                        this.selectedFeeder = this.feederMapping[firstSub][0];
+                    }
+                });
+        },
+        methods: {
+            formatSubstationName(raw) {
+                let text = raw.replace(/([a-z]+)([0-9]+)/i, '$1 $2');
+                return text.toUpperCase();
+            },
+            formatDate(dateStr) {
+                if (!dateStr) return '';
+                const d = new Date(dateStr);
+                const mm = String(d.getMonth() + 1).padStart(2, '0');
+                const dd = String(d.getDate()).padStart(2, '0');
+                const yyyy = d.getFullYear();
+                return `${mm}/${dd}/${yyyy}`;
+            },
+            formatTime(datetimeStr) {
+                if (!datetimeStr) return '';
+                const d = new Date(datetimeStr);
+                let hours = d.getHours();
+                const minutes = String(d.getMinutes()).padStart(2, '0');
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12 || 12;
+                return `${hours}:${minutes} ${ampm}`;
+            },
+            updateFeeders() {
+                if (this.selectedSubstation && this.feederMapping[this.selectedSubstation]) {
+                    const first = this.feederMapping[this.selectedSubstation][0];
+                    this.selectedFeeder = first || '';
+                }
+            },
+            async applySelection() {
+                this.loading = true;
+                this.tableData = await this.generateDay();
+                this.loading = false;
+            },
+            async generateDay() {
+                try {
+                    const feeder = "F" + this.selectedFeeder;
+                    const apiUrl = `${window.API_URL}getMonthlyReport?feeder=${feeder}&month=${this.selectedMonth}&year=${this.selectedYear}`;
+                    const res = await fetch(apiUrl);
+                    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+                    return await res.json();
+                } catch (err) {
+                    console.error("Error:", err);
+                    return [];
+                }
+            },
+            downloadCSV() {
+                const feeder = "F" + this.selectedFeeder;
+                const apiUrl = `${window.API_URL}getMonthlyReport?feeder=${feeder}&month=${this.selectedMonth}&year=${this.selectedYear}`;
+
+                fetch(apiUrl)
+                    .then(res => {
+                        if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+                        return res.json();
+                    })
+                    .then(data => {
+                        if (!data || data.length === 0) {
+                            alert("No data available for export.");
+                            return;
+                        }
+
+                        // Convert to CSV
+                        const header = Object.keys(data[0]).join(',');
+                        const csv = [header, ...data.map(e => Object.values(e).join(','))].join('\n');
+                        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                        const url = URL.createObjectURL(blob);
+
+                        // Generate filename
+                        const monthName = this.months.find(m => m.value === this.selectedMonth)?.name || "Month";
+                        const filename = `Monthly_Report_${monthName}_${this.selectedYear}_FEEDER${this.selectedFeeder}.csv`;
+
+                        // Create and click download link
+                        const link = document.createElement("a");
+                        link.href = url;
+                        link.setAttribute("download", filename);
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+
+                        // Cleanup
+                        URL.revokeObjectURL(url);
+                    })
+                    .catch(err => {
+                        console.error("CSV Download Error:", err);
+                        alert("Failed to generate CSV. Please check console for details.");
+                    });
+            }
+
+        }
+    });
+</script>

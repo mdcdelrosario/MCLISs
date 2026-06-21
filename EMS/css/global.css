@@ -1,0 +1,121 @@
+hr {
+    margin: 2px;
+    padding: 0;
+}
+
+.w3-row {
+    align-items: center; 
+    display: flex;
+}
+
+body {
+    line-height: 1.0;
+}
+/* === DARK THEME OVERRIDES === */
+html, body {
+    background-color: #111 !important;  /* Dark background */
+    color: #eee !important;             /* Light text */
+  }
+  
+  /* Containers and panels dark */
+  .w3-container, .w3-panel, .w3-card, .w3-bar, .w3-modal-content {
+    background-color: #222 !important;
+    color: #eee !important;
+  }
+  
+  /* Tables dark */
+  .w3-table-all, .w3-table, .w3-bordered tr, .w3-table-all tr {
+    background-color: #222 !important;
+    color: #eee !important;
+    border-color:  #eee !important;
+  }
+  
+  /* Buttons dark */
+  .w3-button, .w3-btn {
+    background-color: #333 !important;
+    color: #eee !important;
+    border: 1px solid  #222 !important;
+  }
+  .w3-button:hover, .w3-btn:hover {
+    background-color: #555 !important;
+    color: #fff !important;
+  }
+  
+  /* Inputs and selects */
+  .w3-input, .w3-select {
+    background-color: #111 !important;
+    color: #eee !important;
+    border-bottom: 1px solid  #222 !important;
+  }
+  
+  /* Sidebar dark */
+  .w3-sidebar {
+    background-color: #222 !important;
+    color: #eee !important;
+  }
+  
+  /* Dropdown dark */
+  .w3-dropdown-content {
+    background-color: #222 !important;
+    color: #eee !important;
+  }
+  
+  /* Borders darker */
+  .w3-border, .w3-border-top, .w3-border-bottom, .w3-border-left, .w3-border-right {
+    border-color:  #222 !important;
+  }
+  
+  /* Override specific classes if needed */
+  .w3-light-grey, .w3-light-gray, .w3-hover-light-grey:hover, .w3-hover-light-gray:hover {
+    background-color: #333 !important;
+    color: #eee !important;
+  }
+  
+  /* Hoverable rows */
+  .w3-hoverable tbody tr:hover {
+    background-color: #333 !important;
+  }
+  
+  .w3-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* content starts from top */
+    align-items: stretch;         /* stretch to full width */
+    height: 100%;                 /* full height inside row */
+    padding: 2px;                 /* 👈 add inner space (adjustable) */
+    box-sizing: border-box;       /* 👈 make sure padding doesn't break layout */
+}
+
+ .w3-row {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.w3-card-4 {
+    margin: 1px; /* Or 16px for wider gaps */
+}
+
+/* Style the readonly input textbox */
+.readonly-textbox {
+    width: 100%;
+    padding: 1px;
+    background-color: #222; /* dark background */
+    color: #eee;            /* light text */
+    border: 1px solid #555; /* subtle border */
+    border-radius: 8px;     /* rounded corners */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Optional: Change cursor to default (not text cursor) */
+.readonly-textbox[readonly] {
+    cursor: default;
+}
+
+/* Optional: Hover effect */
+.readonly-textbox:hover {
+    background-color: #333;
+    border-color: #777;
+}
+

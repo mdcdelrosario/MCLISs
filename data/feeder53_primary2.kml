@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document id="root_doc">
+    <Schema id="feeder53_primary2.schema">
+      <SimpleField name="JAEDType" type="string"/>
+      <SimpleField name="SectionID" type="string"/>
+      <SimpleField name="FromBus" type="string"/>
+      <SimpleField name="ToBus" type="string"/>
+      <SimpleField name="Phase" type="string"/>
+      <SimpleField name="PhaseCondUnit" type="string"/>
+      <SimpleField name="PhaseCondStrands" type="string"/>
+      <SimpleField name="PhaseCondType" type="string"/>
+      <SimpleField name="PhaseCondSize" type="string"/>
+      <SimpleField name="NeutralCondUnit" type="string"/>
+      <SimpleField name="NeutralCondStrands" type="string"/>
+      <SimpleField name="NeutralCondType" type="string"/>
+      <SimpleField name="NeutralCondSize" type="string"/>
+      <SimpleField name="length" type="string"/>
+      <SimpleField name="D12" type="string"/>
+      <SimpleField name="D23" type="string"/>
+      <SimpleField name="D13" type="string"/>
+      <SimpleField name="D1n" type="string"/>
+      <SimpleField name="D2n" type="string"/>
+      <SimpleField name="D3n" type="string"/>
+    </Schema>
+    <Document id="feeder53_primary2">
+      <name>feeder53_primary2</name>
+      <Placemark id="feeder53_primary2.1">
+        <ExtendedData>
+          <SchemaData schemaUrl="#feeder53_primary2.schema">
+            <SimpleData name="JAEDType">MVLine</SimpleData>
+            <SimpleData name="SectionID">DX120627428491585006072</SimpleData>
+            <SimpleData name="FromBus">PP120627093281585036600</SimpleData>
+            <SimpleData name="ToBus">PP120627428491585006072</SimpleData>
+            <SimpleData name="Phase">CAN</SimpleData>
+            <SimpleData name="PhaseCondUnit">AWG</SimpleData>
+            <SimpleData name="PhaseCondStrands">6/1</SimpleData>
+            <SimpleData name="PhaseCondType">ACSR</SimpleData>
+            <SimpleData name="PhaseCondSize">2/0</SimpleData>
+            <SimpleData name="NeutralCondUnit">AWG</SimpleData>
+            <SimpleData name="NeutralCondStrands">6/1</SimpleData>
+            <SimpleData name="NeutralCondType">ACSR</SimpleData>
+            <SimpleData name="NeutralCondSize">2</SimpleData>
+            <SimpleData name="length">49.3469743360412</SimpleData>
+            <SimpleData name="D12">1.2</SimpleData>
+            <SimpleData name="D23">1.2</SimpleData>
+            <SimpleData name="D13">2.25</SimpleData>
+            <SimpleData name="D1n">1.3</SimpleData>
+            <SimpleData name="D2n">1</SimpleData>
+            <SimpleData name="D3n">1.3</SimpleData>
+          </SchemaData>
+        </ExtendedData>
+        <MultiGeometry>
+          <LineString>
+            <coordinates>
+              120.626288791671,15.8500283975532,0
+              120.625685422807,15.849775796699,0
+              120.625058110733,15.8495495333748,0
+              120.624603189764,15.84937594511,0
+              120.624172212003,15.8492035540059,0
+              120.62389447078,15.8494154514048,0
+              120.623678981899,15.8498069228708,0
+              120.623099556244,15.8497602336133,0
+              120.622644635274,15.8496872068262,0
+              120.622180137021,15.8496105885575,0
+              120.622304641707,15.8498452320049,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.623406029317,15.8978992523101,0
+              120.623377297467,15.8978609431758,0
+            </coordinates>
+          </LineString>
+          <LineString>
+            <coordinates>
+              120.627093283491,15.850365996799,0
+              120.627428488417,15.8500607208853,0
+              120.627802002475,15.8498260774378,0
+              120.628012702714,15.8493927053563,0
+              120.628315134237,15.8490461431146,0
+              120.628740576265,15.8487725762452,0
+              120.62929127007,15.848492440701,0
+            </coordinates>
+          </LineString>
+        </MultiGeometry>
+      </Placemark>
+    </Document>
+  </Document>
+</kml>
