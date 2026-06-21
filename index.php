@@ -48,7 +48,7 @@ $user_areas_js      = json_encode($user_areas);
   <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/ico" href="favicon.ico">
-  <script src="https://maps.googleapis.com/maps/api/js?key=" defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key" defer></script>
   <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
   <script src="js/fjs.js"></script>
   <script src="js/jquery.min.js"></script>
